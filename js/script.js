@@ -46,4 +46,17 @@ setTimeout(() => {
 
     console.log('Utente: ' + userNumbers)
 
-}, 6000)
+    // Funzione per confrontare gli array e capire quali numeri sono uguali
+    const compareArrays = (array1, array2) => {
+        const correctNumber = array1.filter(number => array2.includes(number));
+        return correctNumber;
+    };
+
+    // Ottieni i numeri indovinati
+    const correctNumbers = compareArrays(randomNumbers, userNumbers);
+
+    console.log(`Hai indovinato ${correctNumbers.length} numero/i: ${correctNumbers.join(', ')}`);
+    // Stampo i numeri che l'utente ha indovinao in pagina!
+    screenNumber.innerHTML = (`Hai indovinato ${correctNumbers.length} numero/i: ${correctNumbers.join(', ')}`);
+
+}, 6000);
