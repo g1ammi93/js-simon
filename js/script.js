@@ -27,3 +27,23 @@ const randomNumbers = number(minNumber, maxNumber, numberOfRandomNumbers);
 console.log(randomNumbers);
 
 screenNumber.innerHTML = randomNumbers
+
+// metto il tempo in cui i numeri appaiono in pagina
+setTimeout(() => {
+    screenNumber.innerHTML = []
+}, 5000)
+
+// Aggiungo un prompt che chiede all'utente quali fossero i 5 numeri a schermo
+
+const userNumbers = []
+
+setTimeout(() => {
+    for (let i = 1; i <= numberOfRandomNumbers; i++) {
+        const userNumber = prompt("Scrivi uno dei numeri apparsi a schermo!")
+        userNumbers.push(parseInt(userNumber))
+    }
+
+
+    console.log('Utente: ' + userNumbers)
+
+}, 6000)
